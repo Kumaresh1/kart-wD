@@ -1,0 +1,34 @@
+POST http://localhost:3000/startup/signup
+Content-Type: application/json
+
+{
+
+    "cin":"44444",
+    "pan":"7855555555",
+    "name_of_startup":"FundingKart",
+    "name_of_founder":"Raghul",
+    "name_of_cofounder":"Kumar",
+    "company_email":"fundings@google.com",
+    "founder_email":"raghul@google.com",
+    "cofounder_email":"kumar@google.com",
+    "password":"kumaresh",
+    "investment_need":"Startup ",
+    "documents":[
+        {
+            "name":"Incorporation Certificates",
+            "url":""
+        },
+        {
+            "name":"PAN",
+            "url":""
+        },
+        {
+            "name":"AOA",
+            "url":""
+        }
+    ]
+
+
+
+
+}
