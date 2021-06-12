@@ -82,7 +82,7 @@ route.post('/signup', async (req, res) => {
  
  });
 
- route.post('/allusers', async (req, res) => {
+ route.get('/allusers', async (req, res) => {
 
 
   let out=await findtrains.find({})
