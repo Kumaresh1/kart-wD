@@ -50,7 +50,7 @@ route.post('/signup', async (req, res) => {
 
   console.log(data_body);
 
-  let out=await findtrains.find({})
+  let out=await userdb.find({})
  
   .then((result)=>{
 
@@ -84,15 +84,15 @@ route.post('/signup', async (req, res) => {
 
  route.get('/allusers', async (req, res) => {
 
-
-  let out=await userdb.find({})
+  
+  await userdb.find({})
  
   .then((result)=>{
 
     res.status("200").json(
       {
-        "data":out,
-      "message":"Data Fetch Successful",
+        "data":result,
+      "message":"Data Fetch Successful ",
       "status":true,
       "code":200    
 
@@ -101,6 +101,8 @@ route.post('/signup', async (req, res) => {
 
   })
   .catch(err=>{
+
+    console.log(err)
 
     res.status("500").json(
       {
