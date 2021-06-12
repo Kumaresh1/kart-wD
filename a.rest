@@ -1,18 +1,33 @@
-POST http://localhost:3000/startup/signup
+POST http://localhost:3000/startup/save
 Content-Type: application/json
 
 {
 
+    "userid":"60c46d8408d6da3541a667e3",
     "cin":"44444",
     "pan":"7855555555",
-    "name_of_startup":"FundingKart",
-    "name_of_founder":"Raghul",
-    "name_of_cofounder":"Kumar",
+    "startup_name":"FundingKart",
+    "founder_name":"Raghul",
+    "cofounder_name":"Kumar",
     "company_email":"fundings@google.com",
     "founder_email":"raghul@google.com",
     "cofounder_email":"kumar@google.com",
-    "password":"kumaresh",
+
     "investment_need":"Startup ",
+    "founder_aadhar_number":"314313113",
+    "founder_pan_number":"444422143",
+    "co_founder_aadhar_number":"6839334",
+    "co_founder_pan_number":"gjdnsjdf",
+    "gst_number":"e4t543",
+    "dipp_number":"444473443",
+    "udyan_number":"4587411",
+    "office_address":"Gandhi nagar, Delhi",
+    "incorporation_date":"12/02/2020",
+    "ac_no":"4785222222",
+    "ifsc":"F467SFG",
+    "name":"Rahul",
+    "bank_name":"Axis bank",
+    
     "documents":[
         {
             "name":"Incorporation Certificates",
@@ -26,22 +41,54 @@ Content-Type: application/json
             "name":"AOA",
             "url":""
         }
-    ]
+    ],
+    "startup_size":50,
+    "about_startup":"This is a web based company",
+    "startup_stage":"stage 1",
+    "already_funded":true
 
 }
 
 ###
-GET http://localhost:3000/startup/allusers
+GET http://localhost:3000/startup/alldata
 
 ###
 
-POST http://localhost:3000/startup/login
+
+
+
+GET http://localhost:3000/user/allusers
+
+###
+
+POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
 
-"userid":"fundings@google.com",
+"email":"fundings@google.com",
 "password":"kumaresh"
 
 
 }
+
+
+###
+
+POST http://localhost:3000/user/signup
+Content-Type: application/json
+
+{
+
+"name":"fundkart",
+"phone":"785413685",
+"email":"fundings@google.com",
+"user_type":"startup",
+"password":"kumaresh"
+
+
+}
+
+
+###
+

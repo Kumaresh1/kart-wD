@@ -17,7 +17,7 @@ route.post('/signup', async (req, res) => {
     res.status("201").json(
       {
         "data":data_body,
-      "message":"Saved success for "+data_body.name_of_startup,
+      "message":"Saved success for "+data_body.name,
       "status":true,
       "code":201    
 
@@ -47,11 +47,11 @@ route.post('/signup', async (req, res) => {
 
   const data_body=req.body;
 
-  const {userid,password}=data_body;
+  const {email,password}=data_body;
 
   // console.log(data_body);
 
-  await userdb.findOne({company_email:userid})
+  await userdb.findOne({email:email})
  
   .then((result)=>{
 
@@ -106,7 +106,7 @@ route.post('/signup', async (req, res) => {
   })
   .catch(err=>{
 
-    res.status("400").json(
+    return res.status("400").json(
       {
         "data":data_body,
       "message":"User not Found",
@@ -119,7 +119,9 @@ route.post('/signup', async (req, res) => {
 
   })
  
- });
+ }
+ 
+ );
 
  route.get('/allusers', async (req, res) => {
 

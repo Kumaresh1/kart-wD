@@ -10,8 +10,14 @@ app.use(express.json({ extended: false }));
 
 app.set('view engine','ejs')
 
-app.use('/startup', require('./Api/signup'));
+try{
+app.use('/user', require('./Api/signup'));
+app.use('/startup', require('./Api/startup'));
+}catch(err){
 
+    console.log("err");
+    res.send(err);
+}
 
 app.get('/',(req,res)=>
 {
