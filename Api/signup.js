@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const userdb = require('../DB/signupDB');
 const route = express.Router();
+const bcrypt=require('bcrypt')
 
 route.post('/signup', async (req, res) => {
 
@@ -48,31 +49,69 @@ route.post('/signup', async (req, res) => {
 
   const {userid,password}=data_body;
 
-  console.log(data_body);
+  // console.log(data_body);
 
-  let out=await userdb.find({})
+  await userdb.findOne({company_email:userid})
  
   .then((result)=>{
 
-    res.status("201").json(
-      {
-        "data":data_body,
-      "message":"Saved success for "+data_body.name_of_startup,
-      "status":true,
-      "code":201    
+    if(result.length==0){
 
-      }
-    );
+      res.status("400").json(
+        {
+          "data":data_body,
+        "message":"User not Found",
+        "status":true,
+        "code":400    
+  
+        }
+      );
+  
+    }
+    else{
+    console.log(result);
+      
+      bcrypt.compare(password, result.password, function(err, result) {
 
+        if (err) throw err;
+        
+        if(result==true){
+
+          res.status("200").json(
+            {
+              "data":data_body,
+            "message":"Login Sucessfull",
+            "status":true,
+            "code":200    
+      
+            }
+          );
+        }
+        else{
+          res.status("400").json(
+            {
+              "data":data_body,
+            "message":"Wrong Password",
+            "status":true,
+            "code":400    
+      
+            }
+          );
+        }
+      });
+
+    }
+
+    
   })
   .catch(err=>{
 
-    res.status("500").json(
+    res.status("400").json(
       {
-        "data":err,
-      "message":"Saved Failed with ",
-      "status":false,
-      "code":500    
+        "data":data_body,
+      "message":"User not Found",
+      "status":true,
+      "code":400    
 
       }
     );
