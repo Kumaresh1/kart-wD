@@ -29,7 +29,7 @@ route.post('/signup', async (req, res) => {
     res.status("500").json(
       {
         "data":err,
-      "message":"Saved Failed with ",
+      "message":"Saved Failed ",
       "status":false,
       "code":500    
 
@@ -85,7 +85,7 @@ route.post('/signup', async (req, res) => {
  route.get('/allusers', async (req, res) => {
 
 
-  let out=await findtrains.find({})
+  let out=await userdb.find({})
  
   .then((result)=>{
 
