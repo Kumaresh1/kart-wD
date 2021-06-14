@@ -92,3 +92,55 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:3000/govtorg/search?id=44587777
+
+###
+
+POST http://localhost:3000/govtorg/save
+Content-Type: application/json
+
+{
+
+"userid":"44587777",
+"logo":"https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Aadhaar_Logo.svg/1200px-Aadhaar_Logo.svg.png",
+"department_name":"E-Aadhar",
+"about_us":"We update aadhar data",
+"facility_we_provide":"updation of user data in Aadhar"
+
+}
+
+###
+
+POST http://localhost:3000/investor/save
+Content-Type: application/json
+
+{
+
+"userid":"111",
+"aadhar_card":"47855222",
+"pan_card":"HB789523N",
+"investment_size":2,
+"investment_industry":"Paper Industry",
+"documents":[
+
+  {
+            "name":"Aadhar Card",
+            "url":""
+        },
+{
+            "name":"Pan Card",
+            "url":""
+        }
+      
+
+],
+"about":"We create papers for Govt Documents"
+
+
+
+}
+
+
+
+
+

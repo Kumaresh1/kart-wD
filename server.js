@@ -13,6 +13,12 @@ app.set('view engine','ejs')
 try{
 app.use('/user', require('./Api/signup'));
 app.use('/startup', require('./Api/startup'));
+
+
+app.use('/investor', require('./Api/investors'));
+
+app.use('/govtorg', require('./Api/govtorg'));
+
 }catch(err){
 
     console.log("err");
