@@ -16,6 +16,7 @@ app.use('/startup', require('./Api/startup'));
 
 
 app.use('/investor', require('./Api/investors'));
+app.use('/news', require('./Api/news'));
 
 app.use('/govtorg', require('./Api/govtorg'));
 

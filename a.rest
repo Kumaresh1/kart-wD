@@ -136,11 +136,36 @@ Content-Type: application/json
 ],
 "about":"We create papers for Govt Documents"
 
+}
+
+###
+POST http://localhost:3000/news/save
+Content-Type: application/json
+
+{
+
+"image":"https://www.festo.com/group/en/repo/assets/319718852-corona-1532x900-adobestock.jpg",
+"body":"India registers 60,471 new Covid-19 cases, lowest in 75 days; below 3,000 deaths; Telangana govt cancels Class 12 exams",
+"title":"Coronavirus in India ",
+"link":"https://www.financialexpress.com/lifestyle/health/coronavirus-in-india-live-news-covid19-live-updates-june-15-latest-covid-vaccine-live-state-wise-updates-delhi-unlock-3-up-maharashtra-tamil-nadu-lockdown-unlocking-supply-live-vaccination-live/2270808/"
 
 
 }
 
+###
+POST http://localhost:3000/news/search
+Content-Type: application/json
 
+{
+"title":"Coronavirus in India "
+
+
+}
+###
+
+GET http://localhost:3000/news/allnews
+
+###
 
 
 
