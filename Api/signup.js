@@ -71,15 +71,15 @@ route.post('/signup', async (req, res) => {
     else{
     console.log(result);
       
-      bcrypt.compare(password, result.password, function(err, result) {
+      bcrypt.compare(password, result.password, function(err, bres) {
 
         if (err) throw err;
         
-        if(result==true){
+        if(bres==true){
 
           res.status("200").json(
             {
-              "data":data_body,
+              "data":result,
             "message":"Login Sucessfull",
             "status":true,
             "code":200    
