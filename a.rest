@@ -50,10 +50,13 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/startup/alldata
+GET http://localhost:3000/govtorg/alldata
 
 ###
 
+GET http://localhost:3000/user/check?user_id=44587777&user_type=government
+
+###
 
 
 

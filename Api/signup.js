@@ -1,6 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const userdb = require('../DB/signupDB');
+const startupdb = require('../DB/startupDB');
+const investordb = require('../DB/investor');
+const govtorgdb = require('../DB/GovtOrgDB');
 const route = express.Router();
 const bcrypt=require('bcrypt')
 
@@ -45,7 +48,7 @@ route.post('/signup', async (req, res) => {
 
  route.post('/login', async (req, res) => {
 
-  const data_body=req.body;
+  const data_body=req.query;
 
   const {email,password}=data_body;
 
@@ -158,6 +161,108 @@ route.post('/signup', async (req, res) => {
 
   })
  
+ });
+
+
+ route.get('/check',async (req,res)=>{
+
+  const {user_id,user_type}=req.query;
+
+  datacon=req.query;
+  console.log(datacon);
+
+  if(user_type=="Startup" ||user_type=="startup"){
+
+  await  startupdb.find({userid:user_id})
+    .then(result=>{ 
+      
+      res.json({
+        data:result,
+        status:true,
+        code:200,
+        message:"Data found"
+      })
+    })
+    .catch(err=>{
+
+      res.status("404").json({
+        data:err,
+        status:false,
+        code:404,
+        message:"No Data found"
+      })
+
+    })
+
+  }
+else if(user_type=="investor" ||user_type=="Investor"){
+
+investordb.find({userid:user_id})
+  .then(result=>{ 
+    
+    res.json({
+      data:result,
+      status:true,
+      code:200,
+      message:"Data found"
+    })
+  })
+  .catch(err=>{
+
+    res.status("404").json({
+      data:err,
+      status:false,
+      code:404,
+      message:"No Data found"
+    })
+
+  })
+
+
+
+}
+else if(user_type=="government" ||user_type=="Government"){
+
+govtorgdb.find({userid:user_id})
+  .then(result=>{ 
+    
+    res.json({
+      data:result,
+      status:true,
+      code:200,
+      message:"Data found"
+    })
+  })
+  .catch(err=>{
+
+    res.status("404").json({
+      data:err,
+      status:false,
+      code:404,
+      message:"No Data found"
+    })
+
+  })
+
+
+
+
+}
+else{
+
+  res.json({
+    data:req.query,
+    status:false,
+    code:404,
+    message:"No Data found"
+  })
+
+
+
+}
+
+
+
  });
 
 
