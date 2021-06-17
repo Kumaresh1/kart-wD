@@ -177,7 +177,7 @@ route.post('/signup', async (req, res) => {
     .then(result=>{ 
       
       res.json({
-        data:result,
+        data:true,
         status:true,
         code:200,
         message:"Data found"
@@ -186,7 +186,7 @@ route.post('/signup', async (req, res) => {
     .catch(err=>{
 
       res.status("404").json({
-        data:err,
+        data:false,
         status:false,
         code:404,
         message:"No Data found"
@@ -201,7 +201,7 @@ investordb.find({userid:user_id})
   .then(result=>{ 
     
     res.json({
-      data:result,
+      data:true,
       status:true,
       code:200,
       message:"Data found"
@@ -210,7 +210,7 @@ investordb.find({userid:user_id})
   .catch(err=>{
 
     res.status("404").json({
-      data:err,
+      data:false,
       status:false,
       code:404,
       message:"No Data found"
@@ -227,7 +227,7 @@ govtorgdb.find({userid:user_id})
   .then(result=>{ 
     
     res.json({
-      data:result,
+      data:true,
       status:true,
       code:200,
       message:"Data found"
@@ -236,7 +236,7 @@ govtorgdb.find({userid:user_id})
   .catch(err=>{
 
     res.status("404").json({
-      data:err,
+      data:false,
       status:false,
       code:404,
       message:"No Data found"
@@ -250,8 +250,8 @@ govtorgdb.find({userid:user_id})
 }
 else{
 
-  res.json({
-    data:req.query,
+  res.status("404").json({
+    data:false,
     status:false,
     code:404,
     message:"No Data found"
