@@ -28,9 +28,32 @@ app.use('/govtorg', require('./Api/govtorg'));
 
 app.get('/',(req,res)=>
 {
-    res.render('index')
+    //res.sendFile(__dirname+'/views/index.html');
+res.render('index')
+
 })
 
 const Port = process.env.PORT || 3000;
+
+// const io=require('socket.io')(3001,{
+//     cors:{
+//         origin:"*"
+//     }
+// })
+
+// io.on("connection",socket=>{
+
+//     console.log("User Connected " + socket.id)
+
+// socket.emit("users","ok"); 
+
+// socket.on("gethi",data=>{
+//     console.log("hi data",data)
+//     socket.broadcast.emit("messageall",data);
+// })
+
+
+
+// })
 
 app.listen(Port, () => console.log('Server started at '+Port));

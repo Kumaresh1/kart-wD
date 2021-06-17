@@ -64,19 +64,26 @@ GET http://localhost:3000/user/allusers
 
 ###
 
-POST http://localhost:3000/user/login
-Content-Type: application/json
-
-{
-
-"email":"fundings@google.com",
-"password":"kumaresh"
+POST http://localhost:3000/user/login?email=fundings@google.com&password=kumaresh
 
 
-}
 
 
 ###
+
+
+POST http://localhost:3000/user/update
+Content-Type: application/json
+
+{
+    "_id": "60c48027134ee243f0c07007",
+    "name": "fundkart"
+   
+}
+
+### 
+
+
 
 POST http://localhost:3000/user/signup
 Content-Type: application/json
@@ -87,7 +94,9 @@ Content-Type: application/json
 "phone":"785413685",
 "email":"fundings@google.com",
 "user_type":"startup",
-"password":"kumaresh"
+"password":"kumaresh",
+"profile_pic":"",
+"cover_pic":""
 
 
 }
@@ -170,5 +179,50 @@ GET http://localhost:3000/news/allnews
 
 ###
 
+POST http://localhost:3000/user/login?email=reach12@gmail.com&password=123123
 
+
+
+###
+
+
+POST http://localhost:3000/govtorg/update
+Content-Type: application/json
+
+{
+
+       "_id": "60c6fda90cb27025540501db",
+       "department_name":"EAadhar update"
+  
+}
+
+### 
+
+
+###
+
+
+POST http://localhost:3000/investor/update
+Content-Type: application/json
+
+{
+   "_id": "60c702e503181028e00783d5",
+            "userid": "hsgj23"  
+}
+
+### 
+
+###
+
+
+POST http://localhost:3000/startup/update
+Content-Type: application/json
+
+{
+    "_id": "60c482decc6e130004bd9c53",
+    "cin": "SA45357"
+   
+}
+
+### 
 

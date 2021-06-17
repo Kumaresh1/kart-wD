@@ -137,6 +137,58 @@ else
  });
 
 
+ route.post('/update',async (req,res)=>{
+
+  datain=req.body;
+  const id=datain._id || datain.id;
+console.log(id)
+
+
+
+ await startupdb.updateOne({_id:id},datain)
+ .then(result=>{
+
+  if(result.nModified>=1){
+
+    return    res.json({
+          data:datain,
+          status:true,
+          code:200,
+          message:"Update Sucessfull"
+        })
+      
+      
+      }else{
+     return   res.json({
+          data:datain,
+          status:true,
+          code:200,
+          message:"Data is up to date"
+        })
+      
+      
+      }
+     
+
+
+ })
+ .catch(err=>{
+
+  res.json({
+    data:req.query,
+    status:false,
+    code:404,
+    message:"No Data found"
+  })
+
+
+
+ })
+
+
+ });
+
+
 
 
 module.exports = route;
