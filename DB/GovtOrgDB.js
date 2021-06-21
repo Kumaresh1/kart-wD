@@ -10,6 +10,10 @@ const data = new mongoose.Schema({
     unique:true
   },
 
+  bookmark:{
+    type:Number,
+    default:0
+  },
 logo:{
   type:String,
   required:true

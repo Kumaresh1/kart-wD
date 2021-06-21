@@ -27,6 +27,11 @@ const data = new mongoose.Schema({
         required:true,
       
       },
+
+      bookmark:{
+        type:Number,
+        default:0
+      },
      
       founder_name: {
         type: String,

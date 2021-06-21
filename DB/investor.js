@@ -39,6 +39,10 @@ const data = new mongoose.Schema({
     type : String,
     default:true
   },
+  bookmark:{
+    type:Number,
+    default:0
+  },
   
  date:{
       type : Date,
