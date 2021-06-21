@@ -60,7 +60,7 @@ GET http://localhost:3000/user/check?user_id=44587777&user_type=government
 
 
 
-GET http://localhost:3000/user/allusers
+GET http://localhost:3000/user/allusers?userid=60c9b71233130b00042c7c5b
 
 ###
 

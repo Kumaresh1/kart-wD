@@ -47,8 +47,17 @@ route.post('/save', async (req, res) => {
  route.get('/alldata', async (req, res) => {
 
   
-  await startupdb.find({})
- 
+  let datacon=req.query;
+  var searchquery;
+    if(datacon.userid==null){
+  searchquery={}
+    }
+    else{
+      searchquery={userid: { $ne:datacon.userid  }}
+    }
+  
+    await startupdb.find(searchquery)
+   
   .then((result)=>{
 
     res.status("200").json(

@@ -128,8 +128,15 @@ route.post('/signup', async (req, res) => {
 
  route.get('/allusers', async (req, res) => {
 
-  
-  await userdb.find({})
+  let datacon=req.query;
+var searchquery;
+  if(datacon.userid==null){
+searchquery={}
+  }
+  else{
+    searchquery={_id: { $ne:datacon.userid  }}
+  }
+  await userdb.find(searchquery)
  
   .then((result)=>{
 
