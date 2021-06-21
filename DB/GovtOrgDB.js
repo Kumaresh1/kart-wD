@@ -9,6 +9,21 @@ const data = new mongoose.Schema({
     type:String,
     unique:true
   },
+  twitter:{
+    type:String
+  },
+  linkedin:{
+    type:String
+  },facebook:{
+    type:String
+  },
+  instagram:{
+    type:String
+  },
+  
+  website:{
+    type:String
+  },
 
   bookmark:{
     type:Number,

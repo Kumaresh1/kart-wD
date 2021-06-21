@@ -32,6 +32,21 @@ const data = new mongoose.Schema({
         type:Number,
         default:0
       },
+      twitter:{
+        type:String
+      },
+      linkedin:{
+        type:String
+      },facebook:{
+        type:String
+      },
+      instagram:{
+        type:String
+      },
+      
+      website:{
+        type:String
+      },
      
       founder_name: {
         type: String,

@@ -71,6 +71,8 @@ POST http://localhost:3000/user/login?email=fundings@google.com&password=kumares
 
 ###
 
+GET http://ascentwebdevelopments.web.app/
+###
 
 POST http://localhost:3000/user/update
 Content-Type: application/json
