@@ -50,14 +50,16 @@ const data = new mongoose.Schema({
         type:String
       },
      
-      founder_name: {
+      founder: {
         type: Array,
         required:true,
       },
-      cofounder_name: {
+      cofounder: {
         type: Array,
         required:true,
       },
+
+
       company_email: {
         type: String,
         required:true,
@@ -65,39 +67,10 @@ const data = new mongoose.Schema({
         lowercase:true,
         validate:[isEmail,"Please enter valid email"]
       },
-      founder_email: {
-        type: Array,
-        required:true,
-        unique:true,
-        lowercase:true,
-        validate:[isEmail,"Please enter valid email"]
-      },
-      cofounder_email: {
-        type: Array,
-        required:true,
-        unique:true,
-        lowercase:true,
-        validate:[isEmail,"Please enter valid email"]
-      },
+      
     
       investment_need:{
         type:String,
-          required:true
-      },
-      founder_aadhar_number:{
-        type:Array,
-          required:true
-      },
-      founder_pan_number:{
-        type:Array,
-          required:true
-      },
-      co_founder_aadhar_number:{
-        type:Array,
-          required:true
-      },
-      co_founder_pan_number:{
-        type:Array,
           required:true
       },
       gst_number:{
