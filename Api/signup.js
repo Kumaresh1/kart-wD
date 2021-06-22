@@ -130,11 +130,11 @@ route.post('/signup', async (req, res) => {
 
   let datacon=req.query;
 var searchquery;
-  if(datacon.userid==null){
+  if(datacon._id==null){
 searchquery={}
   }
   else{
-    searchquery={_id: { $ne:datacon.userid  }}
+    searchquery={_id: { $ne:datacon._id  }}
   }
   await userdb.find(searchquery)
  
