@@ -50,11 +50,7 @@ const data = new mongoose.Schema({
         type:String
       },
      
-      founder: {
-        type: Array,
-        required:true,
-      },
-      cofounder: {
+      board_members: {
         type: Array,
         required:true,
       },
