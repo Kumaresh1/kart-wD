@@ -17,7 +17,7 @@ route.post('/save', async (req, res) => {
     res.status("201").json(
       {
         "data":data_body,
-      "message":"Saved success for "+data_body.company_name,
+      "message":"Saved success for "+data_body.about,
       "status":true,
       "code":201    
 
