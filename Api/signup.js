@@ -136,7 +136,7 @@ searchquery={}
   else{
     searchquery={_id: { $ne:datacon._id  }}
   }
-  await userdb.find(searchquery)
+  await userdb.find(datacon)
  
   .then((result)=>{
 
