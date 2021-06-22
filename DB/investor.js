@@ -11,10 +11,6 @@ const data = new mongoose.Schema({
     unique:true
   },
  
-  company_name:{
-    type:String,
-    unique:true
-  },
  
   investment_size:{
     type:Number,
@@ -25,21 +21,7 @@ const data = new mongoose.Schema({
 
   
   investment_industry:{
-    type:String,
-    required:true
-  },
- status:{
-    type:String,
-  },
- 
-  invested_amount:{
-    type:Number,
-  },
-  valuation_cap:{
-    type:String,
-  },
-  discount:{
-    type:Number,
+    type:String
   },
  
  
@@ -91,7 +73,9 @@ const data = new mongoose.Schema({
   website:{
     type:String
   },
-  
+ last_investment:{
+   type:Array
+ },
  date:{
       type : Date,
       default: Date.now
