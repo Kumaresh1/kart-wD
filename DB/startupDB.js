@@ -74,7 +74,7 @@ const data = new mongoose.Schema({
           required:true
       },
       gst_number:{
-        type:Array,
+        type:String,
           required:true
       },
       dipp_number:{
