@@ -49,11 +49,11 @@ const data = new mongoose.Schema({
       },
      
       founder_name: {
-        type: String,
+        type: Array,
         required:true,
       },
       cofounder_name: {
-        type: String,
+        type: Array,
         required:true,
       },
       company_email: {
