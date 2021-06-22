@@ -27,7 +27,9 @@ const data = new mongoose.Schema({
         required:true,
       
       },
-
+      logo:{
+        type:String
+      },
       bookmark:{
         type:Number,
         default:0
@@ -64,14 +66,14 @@ const data = new mongoose.Schema({
         validate:[isEmail,"Please enter valid email"]
       },
       founder_email: {
-        type: String,
+        type: Array,
         required:true,
         unique:true,
         lowercase:true,
         validate:[isEmail,"Please enter valid email"]
       },
       cofounder_email: {
-        type: String,
+        type: Array,
         required:true,
         unique:true,
         lowercase:true,
@@ -83,23 +85,23 @@ const data = new mongoose.Schema({
           required:true
       },
       founder_aadhar_number:{
-        type:String,
+        type:Array,
           required:true
       },
       founder_pan_number:{
-        type:String,
+        type:Array,
           required:true
       },
       co_founder_aadhar_number:{
-        type:String,
+        type:Array,
           required:true
       },
       co_founder_pan_number:{
-        type:String,
+        type:Array,
           required:true
       },
       gst_number:{
-        type:String,
+        type:Array,
           required:true
       },
       dipp_number:{

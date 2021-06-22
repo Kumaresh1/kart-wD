@@ -10,27 +10,39 @@ const data = new mongoose.Schema({
     type:String,
     unique:true
   },
-  
-  aadhar_card:{
+ 
+  company_name:{
     type:String,
-    required:true
+    unique:true
   },
-  pan_card:{
-    type:String,
-    required:true
-  },
+ 
   investment_size:{
     type:Number,
     required:true,
   
 
   },
+
   
   investment_industry:{
     type:String,
     required:true
   },
-  
+ status:{
+    type:String,
+  },
+ 
+  invested_amount:{
+    type:Number,
+  },
+  valuation_cap:{
+    type:String,
+  },
+  discount:{
+    type:Number,
+  },
+ 
+ 
   documents:{
     type:Array,
    
@@ -39,6 +51,27 @@ const data = new mongoose.Schema({
     type : String,
     default:true
   },
+  funding_goal:{
+    type : String,
+    default:true
+  },
+  location:{
+    type : String,
+    default:true
+  },
+
+
+
+  aadhar_card:{
+    type:String,
+    required:true
+  },
+  pan_card:{
+    type:String,
+    required:true
+  },
+ 
+
   bookmark:{
     type:Number,
     default:0
