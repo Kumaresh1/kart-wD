@@ -182,13 +182,29 @@ searchquery={}
 
   await  startupdb.find({userid:user_id})
     .then(result=>{ 
+
+      if(result.length==0){
+
+        res.status("404").json({
+          data:false,
+          status:false,
+          code:404,
+          message:"No Data found"
+        })
+
+
+      }
+      else{
+
+        res.json({
+          data:result,
+          status:true,
+          code:200,
+          message:"Data found"
+        })
+      }
       
-      res.json({
-        data:result,
-        status:true,
-        code:200,
-        message:"Data found"
-      })
+      
     })
     .catch(err=>{
 
@@ -206,13 +222,31 @@ else if(user_type=="investor" ||user_type=="Investor"){
 
 investordb.find({userid:user_id})
   .then(result=>{ 
+   
     
-    res.json({
-      data:true,
-      status:true,
-      code:200,
-      message:"Data found"
-    })
+    if(result.length==0){
+
+      res.status("404").json({
+        data:false,
+        status:false,
+        code:404,
+        message:"No Data found"
+      })
+
+
+    }
+    else{
+
+      res.json({
+        data:result,
+        status:true,
+        code:200,
+        message:"Data found"
+      })
+    }
+   
+
+   
   })
   .catch(err=>{
 
@@ -232,13 +266,30 @@ else if(user_type=="government" ||user_type=="Government"){
 
 govtorgdb.find({userid:user_id})
   .then(result=>{ 
-    
-    res.json({
-      data:true,
-      status:true,
-      code:200,
-      message:"Data found"
-    })
+   
+    if(result.length==0){
+
+      res.status("404").json({
+        data:false,
+        status:false,
+        code:404,
+        message:"No Data found"
+      })
+
+
+    }
+    else{
+
+      res.json({
+        data:result,
+        status:true,
+        code:200,
+        message:"Data found"
+      })
+    }
+   
+
+   
   })
   .catch(err=>{
 
