@@ -197,7 +197,7 @@ searchquery={}
       else{
 
         res.json({
-          data:result,
+          data:true,
           status:true,
           code:200,
           message:"Data found"
@@ -238,7 +238,7 @@ investordb.find({userid:user_id})
     else{
 
       res.json({
-        data:result,
+        data:true,
         status:true,
         code:200,
         message:"Data found"
@@ -281,7 +281,7 @@ govtorgdb.find({userid:user_id})
     else{
 
       res.json({
-        data:result,
+        data:true,
         status:true,
         code:200,
         message:"Data found"
