@@ -129,7 +129,7 @@ route.post('/save', async (req, res) => {
 
  route.post('/update',async (req,res)=>{
 
-  datain=req.body;
+ let datain=req.body;
   const id=datain._id || datain.id;
 console.log(id)
 

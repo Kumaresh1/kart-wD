@@ -184,7 +184,7 @@ searchquery={}
     .then(result=>{ 
       
       res.json({
-        data:true,
+        data:result,
         status:true,
         code:200,
         message:"Data found"
