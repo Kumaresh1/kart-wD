@@ -50,14 +50,9 @@ route.post('/save', async (req, res) => {
   
   let datacon=req.query;
   var searchquery;
-    if(datacon.userid==null){
-  searchquery={}
-    }
-    else{
-      searchquery={userid: { $ne:datacon.userid  }}
-    }
+    
   
-    await startupdb.find(searchquery)
+    await startupdb.find(datacon)
    
   .then((result)=>{
 
@@ -95,8 +90,9 @@ route.post('/save', async (req, res) => {
  route.get('/search', async (req, res) => {
 
   console.log(req.query);
-  dataq=req.query;
-  await startupdb.find({userid:dataq.id})
+  let dataq=req.query;
+  
+  await startupdb.find(dataq)
  
   .then((result)=>{
 

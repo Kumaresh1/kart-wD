@@ -22,6 +22,7 @@ app.use('/investor', require('./Api/investors'));
 app.use('/news', require('./Api/news'));
 
 app.use('/govtorg', require('./Api/govtorg'));
+app.use('/btools', require('./Api/btools'));
 
 }catch(err){
 
@@ -31,8 +32,8 @@ app.use('/govtorg', require('./Api/govtorg'));
 
 app.get('/',(req,res)=>
 {
-    res.sendFile(__dirname+'/views/index.html');
-//res.render('index')
+   // res.sendFile(__dirname+'/views/index.html');
+res.render('index')
 
 })
 

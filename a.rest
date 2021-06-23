@@ -153,35 +153,34 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/news/save
+POST http://localhost:3000/btools/save
 Content-Type: application/json
 
 {
 
-"image":"https://www.festo.com/group/en/repo/assets/319718852-corona-1532x900-adobestock.jpg",
-"body":"India registers 60,471 new Covid-19 cases, lowest in 75 days; below 3,000 deaths; Telangana govt cancels Class 12 exams",
-"title":"Coronavirus in India ",
-"link":"https://www.financialexpress.com/lifestyle/health/coronavirus-in-india-live-news-covid19-live-updates-june-15-latest-covid-vaccine-live-state-wise-updates-delhi-unlock-3-up-maharashtra-tamil-nadu-lockdown-unlocking-supply-live-vaccination-live/2270808/"
+"image":"https://media-exp1.licdn.com/dms/image/C510BAQFK5UBrIGn7Ng/company-logo_200_200/0/1585224674272?e=2159024400&v=beta&t=55IYXCELlTuGTPrwl-FHrjtaHk-k8kzZ7VHipYDPz6Y",
+"body":"https://webdriver.in/",
+"title":"Apps and websites"
 
 
 }
 
 ###
-POST http://localhost:3000/news/search
+POST http://localhost:3000/btools/search
 Content-Type: application/json
 
 {
-"title":"Coronavirus in India "
+"title":"Free HR Solutions"
 
 
 }
 ###
 
-GET http://localhost:3000/news/allnews
+GET http://localhost:3000/btools/alldata
 
 ###
 
-POST http://localhost:3000/user/login?email=reach12@gmail.com&password=123123
+POST http://localhost:3000/btools/delete?id=60d2dee91b41db2a775c311d
 
 
 
