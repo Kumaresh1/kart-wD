@@ -228,3 +228,8 @@ Content-Type: application/json
 ### 
 
 [11:50 AM, 6/22/2021] Pulkit Webdriver: And funding goal and location field to investots
+
+[11:23 AM, 6/24/2021] Pulkit Webdriver: Remove last investment array from save investor api
+[11:23 AM, 6/24/2021] Pulkit Webdriver: Remove only from save API
+[11:24 AM, 6/24/2021] Pulkit Webdriver: And make funding goal field integer in save investor api
+[11:41 AM, 6/24/2021] Pulkit Webdriver: Add one field designation in investor profile

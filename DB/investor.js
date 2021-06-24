@@ -23,6 +23,9 @@ const data = new mongoose.Schema({
   investment_industry:{
     type:String
   },
+  designation:{
+type:String
+  },
  
  
   documents:{
@@ -34,7 +37,7 @@ const data = new mongoose.Schema({
     default:true
   },
   funding_goal:{
-    type : String,
+    type : Number,
     default:true
   },
   location:{
