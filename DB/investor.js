@@ -19,6 +19,13 @@ const data = new mongoose.Schema({
 
   },
 
+cover_image:{
+        type:String
+      },
+
+      logo:{
+        type:String
+      },
   
   investment_industry:{
     type:String

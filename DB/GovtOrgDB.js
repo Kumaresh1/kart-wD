@@ -34,6 +34,9 @@ logo:{
   required:true
  
 },
+cover_image:{
+        type:String
+      },
 department_name:{
   type:String,
   required:true

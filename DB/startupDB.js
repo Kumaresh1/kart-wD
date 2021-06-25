@@ -30,6 +30,9 @@ const data = new mongoose.Schema({
       logo:{
         type:String
       },
+      cover_image:{
+        type:String
+      },
       bookmark:{
         type:Number,
         default:0
