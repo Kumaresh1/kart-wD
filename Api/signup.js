@@ -180,7 +180,7 @@ searchquery={}
 
   if(user_type=="Startup" ||user_type=="startup"){
 
-  await  startupdb.find({_id:user_id})
+  await  startupdb.find({userid:user_id})
     .then(result=>{ 
 
       if(result.length==0){
@@ -220,7 +220,7 @@ searchquery={}
   }
 else if(user_type=="investor" ||user_type=="Investor"){
 
-investordb.find({_id:user_id})
+investordb.find({userid:user_id})
   .then(result=>{ 
    
     
@@ -230,7 +230,7 @@ investordb.find({_id:user_id})
         data:false,
         status:false,
         code:404,
-        message:"No Data found"
+        message:"No data found"
       })
 
 
@@ -254,7 +254,7 @@ investordb.find({_id:user_id})
       data:false,
       status:false,
       code:404,
-      message:"No Data found"
+      message:"No data found"
     })
 
   })
@@ -264,7 +264,7 @@ investordb.find({_id:user_id})
 }
 else if(user_type=="government" ||user_type=="Government"){
 
-govtorgdb.find({_id:user_id})
+govtorgdb.find({userid:user_id})
   .then(result=>{ 
    
     if(result.length==0){
@@ -273,7 +273,7 @@ govtorgdb.find({_id:user_id})
         data:false,
         status:false,
         code:404,
-        message:"No Data found"
+        message:"No data found"
       })
 
 
@@ -306,18 +306,54 @@ govtorgdb.find({_id:user_id})
 
 
 }
-else{
 
-  res.status("404").json({
-    data:false,
-    status:false,
-    code:404,
-    message:"No Data found"
-  })
+else {
+
+  userdb.find({_id:user_id})
+    .then(result=>{ 
+     
+      
+      if(result.length==0){
+  
+        res.status("404").json({
+          data:false,
+          status:false,
+          code:404,
+          message:"No data found"
+        })
+  
+  
+      }
+      else{
+  
+        res.json({
+          data:true,
+          status:true,
+          code:200,
+          message:"Data found"
+        })
+      }
+     
+  
+     
+    })
+    .catch(err=>{
+  
+      res.status("404").json({
+        data:false,
+        status:false,
+        code:404,
+        message:"No data found"
+      })
+  
+    })
+  
+  
+  
+  }
+  
 
 
-
-}
 
 
 
