@@ -16,7 +16,7 @@ route.post('/save', async (req, res) => {
 
     res.status("201").json(
       {
-        "data":data_body,
+        "data":result,
       "message":"Saved success for "+data_body.title,
       "status":true,
       "code":201    
@@ -123,6 +123,51 @@ route.post('/save', async (req, res) => {
 
   })
  
+ });
+
+
+ route.post('/checknews',async (req,res)=>{
+
+  datain=req.body;
+  const id=datain._id || datain.id;
+console.log(id)
+
+
+
+ await userdb.findOne(datain)
+ .then(result=>{
+
+ let activity={};
+  activity.ip=req.ip ||null;
+  activity.device=req.headers['user-agent']
+
+ result.login.push(activity);
+ 
+ result.save().
+ then(resl=>{
+  res.json(result)
+
+ })
+ .catch(err=>{
+   res.json(err)
+ })
+     
+
+ })
+ .catch(err=>{
+
+  res.json({
+    data:req.query,
+    status:false,
+    code:404,
+    message:"No Data found"
+  })
+
+
+
+ })
+
+
  });
 
 

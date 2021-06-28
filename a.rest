@@ -50,7 +50,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/govtorg/alldata
+GET http://localhost:3000/startup/alldata
 
 ###
 
@@ -158,9 +158,9 @@ Content-Type: application/json
 
 {
 
-"image":"https://media-exp1.licdn.com/dms/image/C510BAQFK5UBrIGn7Ng/company-logo_200_200/0/1585224674272?e=2159024400&v=beta&t=55IYXCELlTuGTPrwl-FHrjtaHk-k8kzZ7VHipYDPz6Y",
+"image":"https://ia-exp1.licdn.com/dms/image/C510BAQFK5UBrIGn7Ng/company-logo_200_200/0/1585224674272?e=2159024400&v=beta&t=55IYXCELlTuGTPrwl-FHrjtaHk-k8kzZ7VHipYDPz6Y",
 "body":"https://webdriver.in/",
-"title":"Apps and websites"
+"title":"Apps  websites"
 
 
 }
@@ -226,10 +226,14 @@ Content-Type: application/json
 }
 
 ### 
+POST http://localhost:3000/news/checknews
+Content-Type: application/json
 
-[11:50 AM, 6/22/2021] Pulkit Webdriver: And funding goal and location field to investots
+{
+   "_id":"60c8410023a57b2410311b5b"
+}
 
-[11:23 AM, 6/24/2021] Pulkit Webdriver: Remove last investment array from save investor api
-[11:23 AM, 6/24/2021] Pulkit Webdriver: Remove only from save API
-[11:24 AM, 6/24/2021] Pulkit Webdriver: And make funding goal field integer in save investor api
-[11:41 AM, 6/24/2021] Pulkit Webdriver: Add one field designation in investor profile
+
+
+
+###

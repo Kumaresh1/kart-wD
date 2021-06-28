@@ -28,7 +28,9 @@ const data = new mongoose.Schema({
     required:true
   },
   
-  
+  login:{
+    type:Array
+  },
   
   
  date:{

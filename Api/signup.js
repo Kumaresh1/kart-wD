@@ -180,7 +180,7 @@ searchquery={}
 
   if(user_type=="Startup" ||user_type=="startup"){
 
-  await  startupdb.find({userid:user_id})
+  await  startupdb.find({_id:user_id})
     .then(result=>{ 
 
       if(result.length==0){
@@ -220,7 +220,7 @@ searchquery={}
   }
 else if(user_type=="investor" ||user_type=="Investor"){
 
-investordb.find({userid:user_id})
+investordb.find({_id:user_id})
   .then(result=>{ 
    
     
@@ -264,7 +264,7 @@ investordb.find({userid:user_id})
 }
 else if(user_type=="government" ||user_type=="Government"){
 
-govtorgdb.find({userid:user_id})
+govtorgdb.find({_id:user_id})
   .then(result=>{ 
    
     if(result.length==0){

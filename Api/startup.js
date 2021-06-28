@@ -46,6 +46,10 @@ route.post('/save', async (req, res) => {
 
  route.get('/alldata', async (req, res) => {
 
+  let dbuser={}
+  dbuser.ip=req.headers['x-forwarded-for'] ||req.socket.remoteAddress ||null;
+  dbuser.device=req.headers['user-agent']
+  console.log(req.ip,"\n",dbuser.device)
   
   let datacon=req.query;
 var searchquery;
