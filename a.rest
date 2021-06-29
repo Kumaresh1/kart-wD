@@ -54,7 +54,7 @@ GET http://localhost:3000/startup/alldata
 
 ###
 
-GET http://localhost:3000/user/check?user_id=44587777&user_type=government
+GET http://localhost:3000/user/check?user_id=60c48027134ee243f0c0007&user_type=
 
 ###
 
