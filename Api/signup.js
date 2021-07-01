@@ -206,9 +206,9 @@ else{
   datacon=req.query;
   console.log(datacon);
 
-  if(user_type=="Startup" ||user_type=="startup"){
+  //if(user_type=="Startup" ||user_type=="startup"){
 
-  await  startupdb.find({userid:user_id})
+  await  userdb.find({userid:user_id,user_type:user_type})
     .then(result=>{ 
 
       if(result.length==0){
@@ -245,140 +245,140 @@ else{
 
     })
 
-  }
-else if(user_type=="investor" ||user_type=="Investor"){
+  //}
+// else if(user_type=="investor" ||user_type=="Investor"){
 
-investordb.find({userid:user_id})
-  .then(result=>{ 
+// investordb.find({userid:user_id})
+//   .then(result=>{ 
    
     
-    if(result.length==0){
+//     if(result.length==0){
 
-      res.status("404").json({
-        data:false,
-        status:false,
-        code:404,
-        message:"No data found"
-      })
+//       res.status("404").json({
+//         data:false,
+//         status:false,
+//         code:404,
+//         message:"No data found"
+//       })
 
 
-    }
-    else{
+//     }
+//     else{
 
-      res.json({
-        data:true,
-        status:true,
-        code:200,
-        message:"Data found"
-      })
-    }
+//       res.json({
+//         data:true,
+//         status:true,
+//         code:200,
+//         message:"Data found"
+//       })
+//     }
    
 
    
-  })
-  .catch(err=>{
+//   })
+//   .catch(err=>{
 
-    res.status("404").json({
-      data:false,
-      status:false,
-      code:404,
-      message:"No data found"
-    })
+//     res.status("404").json({
+//       data:false,
+//       status:false,
+//       code:404,
+//       message:"No data found"
+//     })
 
-  })
+//   })
 
 
 
-}
-else if(user_type=="government" ||user_type=="Government"){
+// }
+// else if(user_type=="government" ||user_type=="Government"){
 
-govtorgdb.find({userid:user_id})
-  .then(result=>{ 
+// govtorgdb.find({userid:user_id})
+//   .then(result=>{ 
    
-    if(result.length==0){
+//     if(result.length==0){
 
-      res.status("404").json({
-        data:false,
-        status:false,
-        code:404,
-        message:"No data found"
-      })
+//       res.status("404").json({
+//         data:false,
+//         status:false,
+//         code:404,
+//         message:"No data found"
+//       })
 
 
-    }
-    else{
+//     }
+//     else{
 
-      res.json({
-        data:true,
-        status:true,
-        code:200,
-        message:"Data found"
-      })
-    }
+//       res.json({
+//         data:true,
+//         status:true,
+//         code:200,
+//         message:"Data found"
+//       })
+//     }
    
 
    
-  })
-  .catch(err=>{
+//   })
+//   .catch(err=>{
 
-    res.status("404").json({
-      data:false,
-      status:false,
-      code:404,
-      message:"No Data found"
-    })
+//     res.status("404").json({
+//       data:false,
+//       status:false,
+//       code:404,
+//       message:"No Data found"
+//     })
 
-  })
-
-
+//   })
 
 
-}
 
-else {
 
-  userdb.find({_id:user_id})
-    .then(result=>{ 
+// }
+
+// else {
+
+//   userdb.find({_id:user_id})
+//     .then(result=>{ 
      
       
-      if(result.length==0){
+//       if(result.length==0){
   
-        res.status("404").json({
-          data:false,
-          status:false,
-          code:404,
-          message:"No data found"
-        })
+//         res.status("404").json({
+//           data:false,
+//           status:false,
+//           code:404,
+//           message:"No data found"
+//         })
   
   
-      }
-      else{
+//       }
+//       else{
   
-        res.json({
-          data:true,
-          status:true,
-          code:200,
-          message:"Data found"
-        })
-      }
+//         res.json({
+//           data:true,
+//           status:true,
+//           code:200,
+//           message:"Data found"
+//         })
+//       }
      
   
      
-    })
-    .catch(err=>{
+//     })
+//     .catch(err=>{
   
-      res.status("404").json({
-        data:false,
-        status:false,
-        code:404,
-        message:"No data found"
-      })
+//       res.status("404").json({
+//         data:false,
+//         status:false,
+//         code:404,
+//         message:"No data found"
+//       })
   
-    })
+//     })
   
   
   
-  }
+//   }
   
 
 
