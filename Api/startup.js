@@ -173,7 +173,7 @@ console.log(id)
       
       }else{
      return   res.json({
-          data:result,
+          data:datain,
           status:false,
           code:400,
           message:"Data is Up to date"
