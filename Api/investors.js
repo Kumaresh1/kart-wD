@@ -154,7 +154,7 @@ console.log(id)
 
 
 
- await startupdb.updateOne({userid:id},datain)
+ await startupdb.updateOne({_id:id},datain)
  .then(result=>{
 
   if(result.nModified>=1){

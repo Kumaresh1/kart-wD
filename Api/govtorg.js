@@ -153,7 +153,7 @@ console.log(id)
 
 
 
- await GovtOrgDB.updateOne({userid:id},datain)
+ await GovtOrgDB.updateOne({_id:id},datain)
  .then(result=>{
   console.log(result);
 
