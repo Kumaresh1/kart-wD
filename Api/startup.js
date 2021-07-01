@@ -153,7 +153,7 @@ else
  route.post('/update',async (req,res)=>{
 
  let  datain=req.body;
-  const id=datain._id || datain.userid;
+  const id=datain.userid || datain._id;
 console.log(id)
 
 
