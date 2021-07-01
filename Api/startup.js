@@ -152,7 +152,7 @@ else
 
  route.post('/update',async (req,res)=>{
 
-  datain=req.body;
+ let  datain=req.body;
   const id=datain._id || datain.id;
 console.log(id)
 
@@ -173,7 +173,7 @@ console.log(id)
       
       }else{
      return   res.json({
-          data:datain,
+          data:result,
           status:true,
           code:200,
           message:"Data is up to date"
