@@ -13,6 +13,13 @@ route.post('/signup', async (req, res) => {
 
   console.log(data_body);
 
+  userdb.find({email:data_body.email})
+  .then(result=>{
+    if(result.length==0){
+      
+    }
+  })
+
   let newuser = new userdb(data_body);
   await newuser.save()
   .then((result)=>{
