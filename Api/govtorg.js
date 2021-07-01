@@ -147,13 +147,13 @@ else
  route.post('/update',async (req,res)=>{
 
   datain=req.body;
-const id=datain._id || datain.id;
+const id=datain._id || datain.userid;
 
 console.log(id)
 
 
 
- await GovtOrgDB.updateOne({_id:id},datain)
+ await GovtOrgDB.updateOne({userid:id},datain)
  .then(result=>{
   console.log(result);
 

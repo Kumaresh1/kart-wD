@@ -149,12 +149,12 @@ else
  route.post('/update',async (req,res)=>{
 
   datain=req.body;
-  const id=datain._id || datain.id;
+  const id=datain._id || datain.userid;
 console.log(id)
 
 
 
- await startupdb.updateOne({_id:id},datain)
+ await startupdb.updateOne({userid:id},datain)
  .then(result=>{
 
   if(result.nModified>=1){
