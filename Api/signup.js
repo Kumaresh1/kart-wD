@@ -208,7 +208,7 @@ else{
 
   //if(user_type=="Startup" ||user_type=="startup"){
 
-  await  userdb.find({userid:user_id,user_type:user_type})
+  await  userdb.find({_id:user_id,user_type:user_type})
     .then(result=>{ 
 
       if(result.length==0){
