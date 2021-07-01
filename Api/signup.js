@@ -435,7 +435,75 @@ console.log(id)
  });
 
 
- route.post('/forgetpass',async (req,res)=>{
+const checkOldpassword= async (req,res,next)=>{
+
+
+  await userdb.findOne({email:req.query.email})
+ 
+  .then((result)=>{
+
+    if(result.length==0){
+
+      res.status("400").json(
+        {
+          "data":data_body,
+        "message":"User not Found",
+        "status":true,
+        "code":400    
+  
+        }
+      );
+  
+    }
+    else{
+    console.log(result);
+      
+      bcrypt.compare(req.query.oldpassword, result.password, function(err, bres) {
+
+        if (err) throw err;
+        
+        if(bres==true){
+
+          next()
+        }
+        else{
+          res.status("400").json(
+            {
+              "data":req.query,
+            "message":"Wrong Password",
+            "status":true,
+            "code":400    
+      
+            }
+          );
+        }
+      });
+
+    }
+
+    
+  })
+  .catch(err=>{
+
+    return res.status("400").json(
+      {
+        "data":req.query,
+      "message":"User not Found",
+      "status":true,
+      "code":400    
+
+      }
+    );
+
+
+  })
+ 
+
+}
+
+
+
+ route.post('/forgetpass',checkOldpassword,async (req,res)=>{
 
   let datain=req.query;
   let email=datain.email;

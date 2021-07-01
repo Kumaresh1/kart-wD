@@ -64,10 +64,10 @@ GET http://localhost:3000/user/allusers?name=kum
 
 ###
 
-POST http://localhost:3000/user/login?email=govtest@gmail.com&password=kum
+POST http://localhost:3000/user/login?email=abc@google.com&password=kumar
 
 ###
-POST http://localhost:3000/user/forgetpass?email=govtest@gmail.com&newpassword=kum
+POST http://localhost:3000/user/forgetpass?email=abc@google.com&newpassword=kumar&oldpassword=password
 
 
 ###
