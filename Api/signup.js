@@ -13,12 +13,7 @@ route.post('/signup', async (req, res) => {
 
   console.log(data_body);
 
-  userdb.find({email:data_body.email})
-  .then(result=>{
-    if(result.length==0){
 
-    }
-  })
 
   let newuser = new userdb(data_body);
   await newuser.save()
@@ -206,9 +201,9 @@ else{
   datacon=req.query;
   console.log(datacon);
 
-  //if(user_type=="Startup" ||user_type=="startup"){
+  if(user_type=="Startup" ||user_type=="startup"){
 
-  await  userdb.find({_id:user_id,user_type:user_type})
+  await  startupdb.find({userid:user_id})
     .then(result=>{ 
 
       if(result.length==0){
@@ -228,7 +223,7 @@ else{
           data:true,
           status:true,
           code:200,
-          message:" Data found"
+          message:"Data found"
         })
       }
       
@@ -245,140 +240,140 @@ else{
 
     })
 
-  //}
-// else if(user_type=="investor" ||user_type=="Investor"){
+  }
+else if(user_type=="investor" ||user_type=="Investor"){
 
-// investordb.find({userid:user_id})
-//   .then(result=>{ 
+investordb.find({userid:user_id})
+  .then(result=>{ 
    
     
-//     if(result.length==0){
+    if(result.length==0){
 
-//       res.status("404").json({
-//         data:false,
-//         status:false,
-//         code:404,
-//         message:"No data found"
-//       })
+      res.status("404").json({
+        data:false,
+        status:false,
+        code:404,
+        message:"No data found"
+      })
 
 
-//     }
-//     else{
+    }
+    else{
 
-//       res.json({
-//         data:true,
-//         status:true,
-//         code:200,
-//         message:"Data found"
-//       })
-//     }
+      res.json({
+        data:true,
+        status:true,
+        code:200,
+        message:"Data found"
+      })
+    }
    
 
    
-//   })
-//   .catch(err=>{
+  })
+  .catch(err=>{
 
-//     res.status("404").json({
-//       data:false,
-//       status:false,
-//       code:404,
-//       message:"No data found"
-//     })
+    res.status("404").json({
+      data:false,
+      status:false,
+      code:404,
+      message:"No data found"
+    })
 
-//   })
+  })
 
 
 
-// }
-// else if(user_type=="government" ||user_type=="Government"){
+}
+else if(user_type=="government" ||user_type=="Government"){
 
-// govtorgdb.find({userid:user_id})
-//   .then(result=>{ 
+govtorgdb.find({userid:user_id})
+  .then(result=>{ 
    
-//     if(result.length==0){
+    if(result.length==0){
 
-//       res.status("404").json({
-//         data:false,
-//         status:false,
-//         code:404,
-//         message:"No data found"
-//       })
+      res.status("404").json({
+        data:false,
+        status:false,
+        code:404,
+        message:"No data found"
+      })
 
 
-//     }
-//     else{
+    }
+    else{
 
-//       res.json({
-//         data:true,
-//         status:true,
-//         code:200,
-//         message:"Data found"
-//       })
-//     }
+      res.json({
+        data:true,
+        status:true,
+        code:200,
+        message:"Data found"
+      })
+    }
    
 
    
-//   })
-//   .catch(err=>{
+  })
+  .catch(err=>{
 
-//     res.status("404").json({
-//       data:false,
-//       status:false,
-//       code:404,
-//       message:"No Data found"
-//     })
+    res.status("404").json({
+      data:false,
+      status:false,
+      code:404,
+      message:"No Data found"
+    })
 
-//   })
-
-
+  })
 
 
-// }
 
-// else {
 
-//   userdb.find({_id:user_id})
-//     .then(result=>{ 
+}
+
+else {
+
+  userdb.find({_id:user_id})
+    .then(result=>{ 
      
       
-//       if(result.length==0){
+      if(result.length==0){
   
-//         res.status("404").json({
-//           data:false,
-//           status:false,
-//           code:404,
-//           message:"No data found"
-//         })
+        res.status("404").json({
+          data:false,
+          status:false,
+          code:404,
+          message:"No data found"
+        })
   
   
-//       }
-//       else{
+      }
+      else{
   
-//         res.json({
-//           data:true,
-//           status:true,
-//           code:200,
-//           message:"Data found"
-//         })
-//       }
+        res.json({
+          data:true,
+          status:true,
+          code:200,
+          message:"Data found"
+        })
+      }
      
   
      
-//     })
-//     .catch(err=>{
+    })
+    .catch(err=>{
   
-//       res.status("404").json({
-//         data:false,
-//         status:false,
-//         code:404,
-//         message:"No data found"
-//       })
+      res.status("404").json({
+        data:false,
+        status:false,
+        code:404,
+        message:"No data found"
+      })
   
-//     })
+    })
   
   
   
-//   }
+  }
   
 
 
