@@ -465,7 +465,7 @@ console.log(id)
       if(result.nModified>=1){
 
       return    res.json({
-        data:result,
+        data:datain,
         status:true,
         code:200,
         message:"Password Update Sucessfull"
@@ -474,7 +474,7 @@ console.log(id)
     
     }else{
    return   res.json({
-        data:result,
+        data:datain,
         status:false,
         code:400,
         message:"Update failed"
