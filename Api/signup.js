@@ -435,4 +435,71 @@ console.log(id)
  });
 
 
+ route.post('/forgetpass',async (req,res)=>{
+
+  let datain=req.query;
+  let email=datain.email;
+  let newpass=datain.newpassword
+
+  if(newpass==null || newpass==undefined){
+
+    return   res.json({
+      data:datain,
+      status:false,
+      code:400,
+      message:"No newpassword field !Update failed"
+    })
+
+  }else{
+
+  console.log(email,newpass)
+
+  bcrypt.hash(newpass, 10, async(err, passwordHash) => {
+    if(err) {
+       console.log(err);
+    }
+
+    await userdb.updateOne({email:email},{password:passwordHash})
+    .then(result=>{
+
+      if(result.nModified>=1){
+
+      return    res.json({
+        data:result,
+        status:true,
+        code:200,
+        message:"Password Update Sucessfull"
+      })
+    
+    
+    }else{
+   return   res.json({
+        data:result,
+        status:false,
+        code:400,
+        message:"Update failed"
+      })
+    
+    
+    }
+   
+
+    })
+    .catch(err=>{
+
+      res.json({
+        data:err,
+        status:false,
+        code:404,
+        message:"Password Update Failed"
+      })
+
+    })
+ 
+
+
+});
+
+  }
+ });
 module.exports = route;

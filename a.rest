@@ -64,9 +64,10 @@ GET http://localhost:3000/user/allusers?name=kum
 
 ###
 
-POST http://localhost:3000/user/login?email=fundings@google.com&password=kumaresh
+POST http://localhost:3000/user/login?email=govtest@gmail.com&password=kum
 
-
+###
+POST http://localhost:3000/user/forgetpass?email=govtest@gmail.com&newpassword=kum
 
 
 ###

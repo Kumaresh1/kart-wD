@@ -26,7 +26,7 @@ app.use('/btools', require('./Api/btools'));
 
 }catch(err){
 
-    console.log("err");
+    console.log(err);
     
 }
 
