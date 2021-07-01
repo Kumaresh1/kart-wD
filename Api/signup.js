@@ -228,7 +228,7 @@ else{
           data:true,
           status:true,
           code:200,
-          message:"Startup Data found"
+          message:" Data found"
         })
       }
       
