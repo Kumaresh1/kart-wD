@@ -129,13 +129,19 @@ route.post('/signup', async (req, res) => {
  route.get('/allusers', async (req, res) => {
 
   let datacon=req.query;
-var searchquery;
-  if(datacon._id==null){
-searchquery={}
+
+  if(datacon.name!="" || datacon.name!=undefined){
+
+    var regex = new RegExp(datacon.name);
+
+    datacon.name={ '$regex' : regex}
+   
+
   }
-  else{
-    searchquery={_id: { $ne:datacon._id  }}
-  }
+
+
+console.log(regex)
+
   await userdb.find(datacon)
  
   .then((result)=>{
