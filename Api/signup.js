@@ -332,7 +332,7 @@ govtorgdb.find({userid:user_id})
 
 else {
 
-  userdb.find({_id:user_id})
+  userdb.find({userid:user_id})
     .then(result=>{ 
      
       
@@ -353,7 +353,7 @@ else {
           data:true,
           status:true,
           code:200,
-          message:"Data found"
+          message:"User Data found"
         })
       }
      
