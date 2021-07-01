@@ -146,6 +146,21 @@ console.log(regex)
  
   .then((result)=>{
 
+
+    if(result.length==0){
+
+      res.status("500").json(
+        {
+          "data":err,
+        "message":"Get data Failed ",
+        "status":false,
+        "code":500    
+  
+        }
+      );
+
+    }
+else{
     res.status("200").json(
       {
         "data":result,
@@ -154,7 +169,7 @@ console.log(regex)
       "code":200    
 
       }
-    );
+    );}
 
   })
   .catch(err=>{
