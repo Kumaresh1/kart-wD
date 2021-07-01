@@ -208,7 +208,7 @@ else{
 
   if(user_type=="Startup" ||user_type=="startup"){
 
-  await  userdb.find({_id:user_id})
+  await  startupdb.find({userid:user_id})
     .then(result=>{ 
 
       if(result.length==0){
@@ -248,7 +248,7 @@ else{
   }
 else if(user_type=="investor" ||user_type=="Investor"){
 
-userdb.find({_id:user_id})
+investordb.find({userid:user_id})
   .then(result=>{ 
    
     
@@ -292,7 +292,7 @@ userdb.find({_id:user_id})
 }
 else if(user_type=="government" ||user_type=="Government"){
 
-userdb.find({_id:user_id})
+govtorgdb.find({userid:user_id})
   .then(result=>{ 
    
     if(result.length==0){
@@ -312,7 +312,7 @@ userdb.find({_id:user_id})
         data:true,
         status:true,
         code:200,
-        message:"Govt Data found"
+        message:"Data found"
       })
     }
    
