@@ -330,7 +330,7 @@ govtorgdb.find({userid:user_id})
 
 else {
 
-  userdb.find({userid:user_id})
+  userdb.find({_id:user_id})
     .then(result=>{ 
      
       

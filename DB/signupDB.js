@@ -40,10 +40,6 @@ const data = new mongoose.Schema({
   cover_pic:{
     type:String
   },
-  userid:{
-    type:String,
-    unique:true
-  },
   
   
  date:{
