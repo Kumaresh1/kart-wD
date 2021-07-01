@@ -16,7 +16,7 @@ route.post('/signup', async (req, res) => {
   userdb.find({email:data_body.email})
   .then(result=>{
     if(result.length==0){
-      
+
     }
   })
 
@@ -208,7 +208,7 @@ else{
 
   if(user_type=="Startup" ||user_type=="startup"){
 
-  await  startupdb.find({userid:user_id})
+  await  userdb.find({_id:user_id})
     .then(result=>{ 
 
       if(result.length==0){
@@ -228,7 +228,7 @@ else{
           data:true,
           status:true,
           code:200,
-          message:"Data found"
+          message:"Startup Data found"
         })
       }
       
@@ -248,7 +248,7 @@ else{
   }
 else if(user_type=="investor" ||user_type=="Investor"){
 
-investordb.find({userid:user_id})
+userdb.find({_id:user_id})
   .then(result=>{ 
    
     
@@ -292,7 +292,7 @@ investordb.find({userid:user_id})
 }
 else if(user_type=="government" ||user_type=="Government"){
 
-govtorgdb.find({userid:user_id})
+userdb.find({_id:user_id})
   .then(result=>{ 
    
     if(result.length==0){
@@ -312,7 +312,7 @@ govtorgdb.find({userid:user_id})
         data:true,
         status:true,
         code:200,
-        message:"Data found"
+        message:"Govt Data found"
       })
     }
    
