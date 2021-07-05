@@ -147,7 +147,7 @@ else
  route.post('/update',async (req,res)=>{
 
   datain=req.body;
-const id=datain._id || datain.userid;
+const id=datain._id;
 
 console.log(id)
 
