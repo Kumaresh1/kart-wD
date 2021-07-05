@@ -191,7 +191,7 @@ console.log(id)
     data:datain,
     status:false,
     code:404,
-    message:"No Data found"
+    message:"No Datas found"
   })
 
 
