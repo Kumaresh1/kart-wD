@@ -194,6 +194,8 @@ else{
  });
 
 
+
+
  route.get('/check',async (req,res)=>{
 
   const {user_id,user_type}=req.query;
